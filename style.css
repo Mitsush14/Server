@@ -1,0 +1,41 @@
+#thumb{
+    display:flex;
+}
+#thumbs2{
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column size */
+  gap: 3px; /* Adjust the gap between images */
+}
+.image img {
+    max-width:75%;
+    max-height: 75%;
+    height: auto;
+    display: block;
+}
+
+.artplayer-app{
+    width: 400px;
+    height: 300px;
+}
+  
+ul {
+    
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+* {
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+}
+body {
+    font-size: 13px;
+    font-family: 'Fira Sans', sans-serif;
+    overflow-y: scroll;
+    color: var(--text);
+}

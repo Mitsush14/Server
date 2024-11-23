@@ -1,0 +1,52 @@
+<script>
+    const art = new Artplayer({
+        container: '.artplayer-app',
+        url: '$link',
+        setting: true,
+        playbackRate: true,
+        aspectRatio: true,
+        fullscreen: true,
+        fullscreenWeb: true,
+        subtitleOffset: true,
+        miniProgressBar: true,
+        settings: [
+        {
+            width: 200,
+            html: 'Subtitle',
+            tooltip: 'Bilingual',
+            icon: '<img width="22" heigth="22" src="/assets/img/subtitle.svg">',
+            selector: [
+                {
+                    html: 'Display',
+                    tooltip: 'Show',
+                    switch: true,
+                    onSwitch: function (item) {
+                        item.tooltip = item.switch ? 'Hide' : 'Show';
+                        art.subtitle.show = !item.switch;
+                        return !item.switch;
+                    },
+                },
+                {
+                    default: true,
+                    html: 'Bilingual',
+                    url: '/assets/sample/subtitle.srt',
+                },
+                {
+                    html: 'Chinese',
+                    url: '/assets/sample/subtitle.cn.srt',
+                },
+                {
+                    html: 'Japanese',
+                    url: '/assets/sample/subtitle.jp.srt',
+                },
+            ],
+            onSelect: function (item) {
+                art.subtitle.switch(item.url, {
+                    name: item.html,
+                });
+                return item.html;
+            },
+        },
+    ]
+    });
+</script>
